@@ -1,0 +1,37 @@
+{
+  "domain": "arbitration-disputes",
+  "articles": [
+    {
+      "slug": "navigating-mtz-disputes-automotive-supply-chain",
+      "title": "Navigating MTZ Disputes in the Global Automotive Supply Chain: A Comparative Legal Analysis of PRC and German Law",
+      "excerpt": "As the global automotive industry grapples with squeezed margins, geopolitical shifts, and the costly transition to electric vehicles, the traditional Material Price Surcharge (MTZ) has transformed from a routine commercial adjustment tool into a critical legal battleground.",
+      "date": "May 30, 2026",
+      "author": "Sofos | & Partners PRC",
+      "image": "/articles/en/navigating-mtz-disputes-automotive-supply-chain/assets/blog-1.png",
+      "tags": [
+        "Automotive",
+        "MTZ Disputes",
+        "PRC Law",
+        "German Law"
+      ],
+      "folder": "navigating-mtz-disputes-automotive-supply-chain",
+      "category": "arbitration-disputes"
+    },
+    {
+      "slug": "china-company-revocation-deregistration",
+      "title": "China Company Revocation vs. Deregistration: When Is a Company Really Born and When Does It Legally Die?",
+      "excerpt": "Because \"revoked but not deregistered\" is not a clean exit. It can become a due diligence issue, a tax issue, a litigation issue, and in some cases a personal risk issue for the legal representative, directors, senior officers, or liquidation obligors.",
+      "date": "July 2, 2026",
+      "author": "Sofos | & Partners PRC",
+      "image": "/articles/en/china-company-revocation-deregistration/assets/blog-6.png",
+      "tags": [
+        "Corporate Law",
+        "Company Deregistration",
+        "PRC Company Law",
+        "Foreign Investment"
+      ],
+      "folder": "china-company-revocation-deregistration",
+      "category": "arbitration-disputes"
+    }
+  ]
+}

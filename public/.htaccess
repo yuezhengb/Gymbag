@@ -1,0 +1,36 @@
+# Apache SPA Fallback Configuration for Sofos & Partners
+# Place this file in the /html/ directory on your Apache server
+#
+# This ensures that all client-side routes (React Router) work correctly
+# when users refresh the page or access deep links directly.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /html/
+
+  # Don't rewrite requests for actual files or directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Don't rewrite API requests (handled by backend)
+  RewriteCond %{REQUEST_URI} !^/html/api/
+
+  # Fallback: serve index.html for all client-side routes
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Enable gzip compression for better performance
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

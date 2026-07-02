@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <title>实践中，股东如何实现以劳务对公司出资</title>
+    <link rel="stylesheet" href="./assets/17823675489450.9837443537950171.css">
+<link rel="stylesheet" href="./assets/17823675495460.5710552375808802.css">
+<link rel="stylesheet" href="./assets/17823675504050.36694170347048416.css">
+<link rel="stylesheet" href="./assets/17823675516820.10084016812954033.css">
+<link rel="stylesheet" href="./assets/17823675538270.6708392973368472.css">
+<link rel="stylesheet" href="./assets/17823675565200.7016808862319983.css">
+<link rel="stylesheet" href="./assets/17823675573890.470791891172224.css">
+<link rel="stylesheet" href="./assets/17823675583480.6734426551596823.css">
+<link rel="stylesheet" href="./assets/17823675598850.7272687982720915.css">
+<link rel="stylesheet" href="./assets/17823675606990.5308040317994506.css">
+<link rel="stylesheet" href="./assets/17823675612930.33909006232196226.css">
+<link rel="stylesheet" href="./assets/17823675624780.12087014082197056.css">
+<link rel="stylesheet" href="./assets/17823675635850.6105263339431626.css">
+<link rel="stylesheet" href="./assets/17823675655310.7110377665144249.css">
+<link rel="stylesheet" href="./assets/17823675668470.9448714212721121.css">
+<link rel="stylesheet" href="./assets/17823675710870.7537333028312027.css">
+<link rel="stylesheet" href="./assets/17823675714730.026013787675432498.css">
+<link rel="stylesheet" href="./assets/17823675719840.6333858186414693.css">
+<link rel="stylesheet" href="./assets/17823675726730.30277185956021335.css">
+<link rel="stylesheet" href="./assets/17823675735120.8155048192177992.css">
+
+    <style>
+        #page-content,
+        #js_article_bottom_bar,
+        .__page_content__ {
+            max-width: 667px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+        }
+        .sns_opr_btn::before {
+            width: 16px;
+            height: 16px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body class="zh_CN wx_wap_page 
+
+                                            wx_wap_desktop_fontsize_2    mm_appmsg
+ comment_feature
+ discuss_tab appmsg_skin_default appmsg_style_default ">
+<style id="sofos-article-hero-style">
+  .sofos-article-hero {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .sofos-article-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(26,46,86,0.2), rgba(26,46,86,0.85));
+  }
+  .sofos-article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 667px;
+    width: 100%;
+    padding: 40px 20px 28px;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .sofos-article-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .sofos-article-hero-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 100px;
+    background: rgba(243,112,33,0.9);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .sofos-article-hero-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .sofos-article-hero-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sofos-article-hero-meta span {
+    display: inline-flex;
+    align-items: center;
+  }
+  .sofos-article-hero-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+  }
+  .sofos-article-hero-back:hover {
+    color: #F37021;
+  }
+  @media (max-width: 768px) {
+    .sofos-article-hero { min-height: 200px; }
+    .sofos-article-hero-title { font-size: 20px; }
+    .sofos-article-hero-content { padding: 24px 16px 20px; }
+  }
+</style>
+<div class="sofos-article-hero" style="background-image: url('/articles/zh/实践中_股东如何实现以劳务对公司出资/./assets/17823675464290.5669650081919344.jpg')">
+  <div class="sofos-article-hero-overlay"></div>
+  <div class="sofos-article-hero-content">
+    <a href="/zh/blog" class="sofos-article-hero-back">← 返回博客</a>
+    <div class="sofos-article-hero-tags"><span class="sofos-article-hero-tag">法律洞察</span></div>
+    <div class="sofos-article-hero-title">实践中，股东如何实现以劳务对公司出资</div>
+    <div class="sofos-article-hero-meta">
+      <span>索福思团队</span>
+      <span>·</span>
+      <span>2026-06-05</span>
+    </div>
+  </div>
+</div>
+
+<div id="js_article" style="position:relative;" class="rich_media">
+  
+  
+  
+  <div id="js_base_container" class="rich_media_inner">
+    
+    
+    
+<div class="wx_row_immersive_stream_wrap" id="js_row_immersive_stream_wrap">
+  
+    <div id="js_row_immersive_cover_img">
+    <img src="./assets/17823675464290.5669650081919344.jpg" alt="cover_image" class="wx_follow_avatar_pic">
+  </div>
+    <div id="js_row_immersive_stream_mask" class="wx_row_immersive_stream_mask"></div>
+</div>
+
+    
+    <div id="page-content" class="rich_media_area_primary">
+      <div class="rich_media_area_primary_inner">
+        
+        
+        
+        
+        
+        
+                
+        
+
+        <div id="img-content" class="rich_media_wrp">
+          
+          <h1 class="rich_media_title " id="activity-name">
+<span class="js_title_inner">实践中，股东如何实现以劳务对公司出资</span></h1>
+          <div id="meta_content" class="rich_media_meta_list">
+                                                                  <span class="rich_media_meta rich_media_meta_text">
+                                      <span style="display: none;" id="js_author_name" datarewardsn="" datatimestamp="" datacanreward="0">LawyerGPC</span>
+                    <span id="js_author_name_text">LawyerGPC</span>
+                                  </span>
+                                      
+                        <span class="rich_media_meta rich_media_meta_nickname" id="profileBt">
+              <a href="javascript:void(0);" class="wx_tap_link js_wx_tap_highlight weui-wa-hotarea" id="js_name">
+                索福思律师事务所              </a>
+              
+              <div id="js_profile_card"></div>
+            </span>
+            
+            <span id="meta_content_hide_info" class="">
+              <em id="publish_time" class="rich_media_meta rich_media_meta_text">2026年06月05日 15:30</em>
+              <em id="js_ip_wording_wrp" class="rich_media_meta rich_media_meta_text" role="text" style="display: inline-block;"><span id="js_a11y_op_ip_wording" aria-hidden="true"></span><span aria-hidden="true" id="js_ip_wording">上海</span></em>
+              <em id="js_title_modify_wrp" class="rich_media_meta rich_media_meta_text" role="option" aria-labelledby="js_a11y_op_title_modify js_title_modify" style="display: none;"><span aria-hidden="true" id="js_title_modify"></span></em>
+                            <span id="js_star" role="link" tabindex="0" class="wx_tap_link js_wx_tap_highlight rich_media_meta rich_media_meta_link rich_media_meta_star" style="display: none;"></span>
+            </span>
+            
+          </div>
+
+
+          
+          <div id="js_novel_card" class="novel-card js_wx_tap_highlight wx_tap_card" style="display: none;">
+            
+            <div class="novel-card__left novel-card__new-only">
+              <div id="js_novel_cover" class="novel-card__cover">
+                <img>
+              </div>
+              <div class="novel-card__text">
+                <div id="js_novel_title" class="novel-card__main">在小说阅读器读本章</div>
+                <div id="js_novel_subtitle" class="novel-card__subtitle"></div>
+              </div>
+            </div>
+            <div id="js_novel_link" class="novel-card__link novel-card__new-only">去阅读</div>
+            
+            <div class="novel-info novel-card__old-only">
+              <div class="novel-cover-group">
+                <div id="js_novel_cover_old" class="novel-cover">
+                  <img>
+                </div>
+                <div class="novel-meta">
+                  <div id="js_novel_title_old" class="novel-title"></div>
+                  <div class="novel-description">在小说阅读器中沉浸阅读</div>
+                </div>
+              </div>
+            </div>
+            <div class="arrow-jump-icon novel-card__old-only"></div>
+          </div>
+
+          
+          
+          
+            
+              
+              
+            
+              
+              
+                
+              
+            
+          
+
+          
+          
+
+          
+                                        
+
+          
+                      
+            <div class="original_area_primary">
+                                                        </div>
+
+            
+                                
+
+          
+                    
+                    
+          
+          
+          
+          
+          
+                                                            <div class="rich_media_content js_underline_content
+                       autoTypeSetting24psection
+            " id="js_content"><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 0em;margin-bottom: 0px;" nodeleaf=""><img data-src="https://mmbiz.qpic.cn/mmbiz/VvDThunBZvS9PNoWLnJXoDqjj4zoribhyMnSdQFeoW6a8CnA0mTEDumXBKia8fMj765jU28z9BNoMkx9ItQTwheg/640?" class="rich_pages wxw-img" data-ratio="0.33" data-w="600" style="background-color: rgb(255, 255, 255);box-sizing: border-box;color: rgb(51, 51, 51);" width="auto" data-backw="558" data-backh="184" data-before-oversubscription-url="https://mmbiz.qpic.cn/mmbiz/VvDThunBZvS9PNoWLnJXoDqjj4zoribhyMnSdQFeoW6a8CnA0mTEDumXBKia8fMj765jU28z9BNoMkx9ItQTwheg/640?" data-aistatus="1" src="./assets/17823675469870.5134685196491248.gif"></section><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span style="text-align: left;text-indent: 2em;"><span leaf="">现实生活中，经常会遇到想创业的</span></span><span style="text-align: left;text-indent: 2em;"><span leaf="">朋友问我</span></span><span style="text-align: left;text-indent: 2em;"><span leaf="">，我想</span></span><span style="text-align: left;text-indent: 2em;"><span leaf="">和人合伙开公司，可是我没有太多资金，能否以技术、技能、管理经验或社会资源出资。</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">根据</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">《公司登记管理条例</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">》第四十条</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">规定：</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">“股东的出资方式应当符合《公司法</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">》第二十七条的规定，但是，股东不得以劳务、信用、自然人姓名、商誉、特许经营权或设定担保的财产等作价出资</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">”。《公司注册资本规定</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">》第五条</span></span><span style="text-align: left;text-indent: 0em;"><span leaf="">第二款也有相同的规定。</span></span></section><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span style="text-align: left;text-indent: 0em;"><span leaf=""><br></span></span></section><section style="text-align: center;margin-bottom: 0px;" nodeleaf=""><img class="rich_pages" data-aistatus="1" data-ratio="0.5376128385155466" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/TSkfhgr8AFQjMUbZXA8f3hKNBjzFqOvtwbcvLibGDxCBZGbKhORianImA3Caic9qvDl9TeRr5DEzd2ibz4gEEUwSKw/640?wx_fmt=png" data-type="png" data-w="997" src="./assets/17823675475110.9638200721198793.jpg"></section><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span leaf=""><br></span></section><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span style="text-indent: 0em;"><span leaf="">&nbsp;公司法之所以规定股东不能以劳务出资，是基于对公司及债权人的权益的保护，因为一旦公司经营不善，涉及破产清算，那么公司将无法清偿债务。对此，只能追究股东的出资不实的责任，而不是让以劳务出资的股东继续为债务人提供劳务。同时，根据公司资本的“资本确定”“资本不变”“资本维持”三大原则，劳务出资违背了资本确定原则，因为劳务出资会使公司出现资本不确定的情况。</span></span></section><section style="text-align: left;margin-right: 0px;margin-left: 0px;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span style="text-align: left;"><span leaf="">是的，法律规定</span></span><span style="text-align: left;"><span leaf="">会告诉你不</span></span><span style="text-align: left;"><span leaf="">可以</span></span><span style="text-align: left;"><span leaf="">，但是你的律师朋友除了</span></span><span style="text-align: left;"><span leaf="">会</span></span><span style="text-align: left;"><span leaf="">告诉你不行</span></span><span style="text-align: left;"><span leaf="">，还会教</span></span><span style="text-align: left;"><span leaf="">你如何</span></span><span style="text-align: left;"><span leaf="">实现可行</span></span><span style="text-align: left;"><span leaf="">性。</span></span></section><section style="text-align: left;text-indent: 0em;margin-right: 0px;margin-left: 0px;margin-bottom: 0px;"><span style="text-align: left;"><span leaf=""><br></span></span></section><section style="text-indent: 28px;margin-right: 8px;margin-left: 8px;text-align: left;margin-bottom: 0px;"><span style="font-size: 17px;"><span style="font-family: 宋体;"><strong></strong></span></span></section><section style="text-align: left;margin-right: 8px;margin-left: 8px;margin-bottom: 0px;" nodeleaf=""><img data-src="https://mmbiz.qpic.cn/mmbiz_jpg/TSkfhgr8AFS7eJejm0iaMO0QIsublkiaz5jkYluqSaPW3dPkFOYjOI4UW8Tibwc5ZzxMrlXfuYgm9gus5PtobG3hw/640?wx_fmt=jpeg" class="rich_pages" data-ratio="0.625" data-s="300,640" data-type="jpeg" data-w="1280" style="width: 578px;height: 361px;" data-aistatus="1" src="./assets/17823675479410.921630401244846.jpg"></section><section style="margin-right: 8px;margin-left: 8px;text-align: left;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span leaf="">根据《合伙企业法》第十六条规定：“合伙人可以用货币、实物、知识产权、土地使用权或其他财产权力出资，也可以劳务出资。.......合伙人以劳务出资的，其评估办法由合伙人协商确定，并在合伙协议中载明。”相较于公司法人的资合性，合伙企业更注重人合性，因此法律允许合伙人以劳务出资的。</span></section><section style="margin-right: 8px;margin-left: 8px;text-align: left;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span leaf="">实际上，这为我们提供了一条间接通过合伙企业实现劳务出资的途径：合伙人先以劳务出资与其他合伙人成立合伙企业，然后再以合伙企业的名义对公司进行投资。</span></section><section style="margin-right: 8px;margin-left: 8px;text-align: left;text-indent: 2em;line-height: 1.75em;margin-bottom: 0px;"><span style="text-indent: 2em;"><span leaf="">不</span></span><span style="text-indent: 2em;"><span leaf="">过对于一人有限责任公司，合伙企业是不能成为其股东的。</span></span><span style="text-indent: 2em;"><span leaf="">根据《公司法》第57条有规定，一人有限责任公司的股东只能是法人或自然人，因为合伙企业没有法人资格，故不能成为其股东</span></span></section><section style="text-indent: 28px;margin-right: 8px;margin-left: 8px;margin-bottom: 0px;"><span leaf=""><br></span></section><section style="text-align: center;margin-right: 8px;margin-left: 8px;margin-bottom: 0px;"><span leaf=""><br></span></section><p style="white-space: normal;max-width: 558px;box-sizing: border-box;overflow-wrap: break-word;min-height: 16px;font-size: 16px;line-height: 25.6px;font-stretch: normal;font-family: 微软雅黑;text-align: center;letter-spacing: 0.54px;background-color: rgb(255, 255, 255);margin-bottom: 0px;"><strong style="max-width: 100%;box-sizing: border-box;overflow-wrap: break-word;font-size: 14px;line-height: 25.6px;"><span style="max-width: 100%;box-sizing: border-box;overflow-wrap: break-word;color: rgb(127, 127, 127);"><span leaf="">&nbsp; &nbsp; — END —</span></span></strong></p><p style="white-space: normal;max-width: 558px;box-sizing: border-box;overflow-wrap: break-word;min-height: 16px;font-size: 16px;line-height: 25.6px;font-family: 微软雅黑;letter-spacing: 0.54px;text-align: center;background-color: rgb(255, 255, 255);margin-bottom: 0px;"><span leaf=""><br></span></p><p rgb="rgb" important="important" border-box="border-box" break-word="break-word" normal="normal" px="px" yahei="yahei" ui="ui" gb="gb" sans="sans" sc="sc" neue="neue" helvetica="helvetica" em="em" sans-serif="sans-serif" arial="arial" microsoft="microsoft" hiragino="hiragino" pingfang="pingfang" style="white-space: normal;max-width: 100%;box-sizing: border-box;min-height: 1em;letter-spacing: 0.544px;line-height: 25.6px;text-align: center;background-color: rgb(255, 255, 255);overflow-wrap: break-word !important;margin-bottom: 0px;"><span style="max-width: 100%;box-sizing: border-box;overflow-wrap: break-word;color: rgb(0, 176, 240);font-size: 24px;"><span leaf=""></span></span></p><p rgb="rgb" important="important" border-box="border-box" break-word="break-word" normal="normal" px="px" yahei="yahei" ui="ui" gb="gb" sans="sans" sc="sc" neue="neue" helvetica="helvetica" em="em" sans-serif="sans-serif" arial="arial" microsoft="microsoft" hiragino="hiragino" pingfang="pingfang" style="white-space: normal;max-width: 100%;box-sizing: border-box;min-height: 1em;letter-spacing: 0.544px;line-height: 25.6px;text-align: center;background-color: rgb(255, 255, 255);overflow-wrap: break-word !important;margin-bottom: 0px;"><span style="max-width: 100%;box-sizing: border-box;overflow-wrap: break-word;color: rgb(214, 95, 25);font-size: 14px;line-height: 25.6px;"><span leaf=""></span></span></p><p rgb="rgb" important="important" border-box="border-box" break-word="break-word" normal="normal" px="px" yahei="yahei" ui="ui" gb="gb" sans="sans" sc="sc" neue="neue" helvetica="helvetica" em="em" sans-serif="sans-serif" arial="arial" microsoft="microsoft" hiragino="hiragino" pingfang="pingfang" style="white-space: normal;max-width: 100%;box-sizing: border-box;min-height: 1em;letter-spacing: 0.544px;line-height: 25.6px;text-align: center;background-color: rgb(255, 255, 255);overflow-wrap: break-word !important;margin-bottom: 0px;"><span style="max-width: 100%;box-sizing: border-box;overflow-wrap: break-word;font-size: 14px;"><span leaf=""></span></span><span leaf=""><br></span></p><section rgb="rgb" important="important" border-box="border-box" break-word="break-word" normal="normal" px="px" yahei="yahei" ui="ui" gb="gb" sans="sans" sc="sc" neue="neue" helvetica="helvetica" em="em" sans-serif="sans-serif" arial="arial" microsoft="microsoft" hiragino="hiragino" pingfang="pingfang" style="white-space: normal;max-width: 100%;box-sizing: border-box;min-height: 1em;letter-spacing: 0.544px;line-height: 25.6px;text-align: center;background-color: rgb(255, 255, 255);overflow-wrap: break-word !important;margin-bottom: 0px;" nodeleaf=""></section><p rgb="rgb" important="important" border-box="border-box" break-word="break-word" normal="normal" px="px" yahei="yahei" ui="ui" gb="gb" sans="sans" sc="sc" neue="neue" helvetica="helvetica" em="em" sans-serif="sans-serif" arial="arial" microsoft="microsoft" hiragino="hiragino" pingfang="pingfang" style="white-space: normal;max-width: 100%;box-sizing: border-box;min-height: 1em;letter-spacing: 0.544px;font-size: 16px;line-height: 25.6px;text-align: center;background-color: rgb(255, 255, 255);overflow-wrap: break-word !important;margin-bottom: 0px;"><span style="max-width: 100%;font-size: 14px;box-sizing: border-box !important;overflow-wrap: break-word !important;"><span leaf=""></span></span></p><section style="margin-right: 0px;margin-left: 0px;margin-bottom: 0px;"><span leaf=""><br></span></section><p style="display: none;"><mp-style-type data-value="3"></mp-style-type></p></div>
+          
+        </div>
+                        
+                
+        
+        
+         <div id="font_pannel_area"></div>
+        
+        
+
+        
+        <div id="js_temp_bottom_area" class="rich_media_tool_area">
+          
+<div class="rich_media_tool__wrp">
+    <div class="rich_media_tool">
+    
+                  <div class="rich_media_info weui-flex rich_media_bottom">
+      
+            
+            
+            <div role="option" class="media_tool_meta tips_global_primary meta_primary">
+        <span>修改于<span id="js_btm_temp_modify_time"></span></span>
+      </div>
+          </div>
+  </div>
+  </div>
+
+        </div>
+
+
+                
+              </div>
+    </div>
+
+    <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none"></div>
+
+    
+    <div class="rich_media_area_extra">
+      <div class="rich_media_area_extra_inner">
+        
+        <div id="page_bottom_area"></div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+
+</div>
+<div id="js_article_bottom_bar" class="bottom_bar_wrp js_temp_bottom_bar">
+      <div id="article_bottom_bar_area"></div>
+    </div>
+
+<!-- 评论数据 -->
+
+</body>
+</html>

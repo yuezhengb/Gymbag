@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <title>短视频玩家，你得重构业务流程了</title>
+    <link rel="stylesheet" href="./assets/17823675873600.5249374957146091.css">
+<link rel="stylesheet" href="./assets/17823675889930.03162825703037586.css">
+<link rel="stylesheet" href="./assets/17823675895460.4219847922414588.css">
+<link rel="stylesheet" href="./assets/17823675901770.3019711742079717.css">
+<link rel="stylesheet" href="./assets/17823675915700.8202532840425072.css">
+<link rel="stylesheet" href="./assets/17823675931350.37504672318773136.css">
+<link rel="stylesheet" href="./assets/17823675936030.8290126102242323.css">
+<link rel="stylesheet" href="./assets/17823675941800.8448969868486623.css">
+<link rel="stylesheet" href="./assets/17823675949370.5339299295279047.css">
+<link rel="stylesheet" href="./assets/17823675961440.45036844398081266.css">
+<link rel="stylesheet" href="./assets/17823675968460.7493489363100069.css">
+<link rel="stylesheet" href="./assets/17823675973020.6074877068049286.css">
+<link rel="stylesheet" href="./assets/17823675981760.7271603350930713.css">
+<link rel="stylesheet" href="./assets/17823675992370.4884869510594603.css">
+<link rel="stylesheet" href="./assets/17823675996900.8102993361246021.css">
+<link rel="stylesheet" href="./assets/17823676033530.46528377056337866.css">
+<link rel="stylesheet" href="./assets/17823676039520.10939188784347831.css">
+<link rel="stylesheet" href="./assets/17823676044810.919941386104181.css">
+<link rel="stylesheet" href="./assets/17823676052890.7111415457964418.css">
+<link rel="stylesheet" href="./assets/17823676061200.6794278813887614.css">
+
+    <style>
+        #page-content,
+        #js_article_bottom_bar,
+        .__page_content__ {
+            max-width: 667px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+        }
+        .sns_opr_btn::before {
+            width: 16px;
+            height: 16px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body class="zh_CN wx_wap_page 
+
+                                            wx_wap_desktop_fontsize_2    mm_appmsg
+ comment_feature
+ discuss_tab appmsg_skin_default appmsg_style_default ">
+<style id="sofos-article-hero-style">
+  .sofos-article-hero {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .sofos-article-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(26,46,86,0.2), rgba(26,46,86,0.85));
+  }
+  .sofos-article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 667px;
+    width: 100%;
+    padding: 40px 20px 28px;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .sofos-article-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .sofos-article-hero-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 100px;
+    background: rgba(243,112,33,0.9);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .sofos-article-hero-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .sofos-article-hero-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sofos-article-hero-meta span {
+    display: inline-flex;
+    align-items: center;
+  }
+  .sofos-article-hero-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+  }
+  .sofos-article-hero-back:hover {
+    color: #F37021;
+  }
+  @media (max-width: 768px) {
+    .sofos-article-hero { min-height: 200px; }
+    .sofos-article-hero-title { font-size: 20px; }
+    .sofos-article-hero-content { padding: 24px 16px 20px; }
+  }
+</style>
+<div class="sofos-article-hero" style="background-image: url('/articles/zh/短视频玩家_你得重构业务流程了/./assets/17823675849290.8891964656738335.jpg')">
+  <div class="sofos-article-hero-overlay"></div>
+  <div class="sofos-article-hero-content">
+    <a href="/zh/blog" class="sofos-article-hero-back">← 返回博客</a>
+    <div class="sofos-article-hero-tags"><span class="sofos-article-hero-tag">法律洞察</span></div>
+    <div class="sofos-article-hero-title">短视频玩家，你得重构业务流程了</div>
+    <div class="sofos-article-hero-meta">
+      <span>索福思团队</span>
+      <span>·</span>
+      <span>2026-05-21</span>
+    </div>
+  </div>
+</div>
+
+<div id="js_article" style="position:relative;" class="rich_media">
+  
+  
+  
+  <div id="js_base_container" class="rich_media_inner">
+    
+    
+    
+<div class="wx_row_immersive_stream_wrap" id="js_row_immersive_stream_wrap">
+  
+    <div id="js_row_immersive_cover_img">
+    <img src="./assets/17823675849290.8891964656738335.jpg" alt="cover_image" class="wx_follow_avatar_pic">
+  </div>
+    <div id="js_row_immersive_stream_mask" class="wx_row_immersive_stream_mask"></div>
+</div>
+
+    
+    <div id="page-content" class="rich_media_area_primary">
+      <div class="rich_media_area_primary_inner">
+        
+        
+        
+        
+        
+        
+                
+        
+
+        <div id="img-content" class="rich_media_wrp">
+          
+          <h1 class="rich_media_title " id="activity-name">
+<span class="js_title_inner">短视频玩家，你得重构业务流程了</span></h1>
+          <div id="meta_content" class="rich_media_meta_list">
+                                                                          
+                        <span class="rich_media_meta rich_media_meta_nickname" id="profileBt">
+              <a href="javascript:void(0);" class="wx_tap_link js_wx_tap_highlight weui-wa-hotarea" id="js_name">
+                索福思律师事务所              </a>
+              
+              <div id="js_profile_card"></div>
+            </span>
+            
+            <span id="meta_content_hide_info" class="">
+              <em id="publish_time" class="rich_media_meta rich_media_meta_text">2026年05月21日 12:00</em>
+              <em id="js_ip_wording_wrp" class="rich_media_meta rich_media_meta_text" role="text" style="display: inline-block;"><span id="js_a11y_op_ip_wording" aria-hidden="true"></span><span aria-hidden="true" id="js_ip_wording">上海</span></em>
+              <em id="js_title_modify_wrp" class="rich_media_meta rich_media_meta_text" role="option" aria-labelledby="js_a11y_op_title_modify js_title_modify" style="display: none;"><span aria-hidden="true" id="js_title_modify"></span></em>
+                            <span id="js_star" role="link" tabindex="0" class="wx_tap_link js_wx_tap_highlight rich_media_meta rich_media_meta_link rich_media_meta_star" style="display: none;"></span>
+            </span>
+            
+          </div>
+
+
+          
+          <div id="js_novel_card" class="novel-card js_wx_tap_highlight wx_tap_card" style="display: none;">
+            
+            <div class="novel-card__left novel-card__new-only">
+              <div id="js_novel_cover" class="novel-card__cover">
+                <img>
+              </div>
+              <div class="novel-card__text">
+                <div id="js_novel_title" class="novel-card__main">在小说阅读器读本章</div>
+                <div id="js_novel_subtitle" class="novel-card__subtitle"></div>
+              </div>
+            </div>
+            <div id="js_novel_link" class="novel-card__link novel-card__new-only">去阅读</div>
+            
+            <div class="novel-info novel-card__old-only">
+              <div class="novel-cover-group">
+                <div id="js_novel_cover_old" class="novel-cover">
+                  <img>
+                </div>
+                <div class="novel-meta">
+                  <div id="js_novel_title_old" class="novel-title"></div>
+                  <div class="novel-description">在小说阅读器中沉浸阅读</div>
+                </div>
+              </div>
+            </div>
+            <div class="arrow-jump-icon novel-card__old-only"></div>
+          </div>
+
+          
+          
+          
+            
+              
+              
+            
+              
+              
+                
+              
+            
+          
+
+          
+          
+
+          
+                                        
+
+          
+                      
+            <div class="original_area_primary" style="margin-bottom: 0;">
+                                                <div class="original_primary_tips">
+                    <p>编者荐语：</p>
+                    <p>  Michael Tan</p>
+                  </div>
+                                          </div>
+
+            
+                          <div class="original_area_primary">
+                <p role="option" class="original_primary_card_tips">
+                                      <span>以下文章来源于女子好学习一大天向上</span>
+                                                        <span>，作者爱琢磨的兔爷</span>
+                                  </p>
+                <a class="weui-flex original_primary_card appmsg_card_context wx_tap_card js_wx_tap_highlight" href="#" id="copyright_info">
+                  <div class="weui-flex__hd">
+                    <span class="radius_avatar">
+                      <img class="avatar" src="./assets/17823675852950.9499585807750377.jpg" alt="">
+                    </span>
+                  </div>
+                  <div class="weui-flex__item" role="option">
+                    <strong class="original_primary_nickname">女子好学习一大天向上</strong>
+                                          <span class="weui-hidden_abs">.</span>
+                      <p class="original_primary_desc">一个爱折腾的人，索福思律所创始人
+25 年商事法律｜AI 与科技深度观察者
+思考有深度，做事有速度，创业有温度
+仲裁员｜独董｜WTO 研究会理事</p>
+                                      </div>
+                  <div class="weui-flex__ft"></div>
+                </a>
+              </div>
+                                
+
+          
+                    
+                    
+          
+          
+          
+          
+          
+                                                            <div class="rich_media_content js_underline_content
+                       autoTypeSetting24psection
+            " id="js_content"><p data-pm-slice="0 0 []" style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; 最近挺忙，不过手艺咱没耽误。习惯性地刷最近的大事，看到了最近中央网信办关于AIGC标识规定的最新官方答记者问。内容管控、打标签这些都不算新闻啦。不过仔细看了一下，发现这次和以往不太一样了。监管层现在的核心逻辑非常直白：“全面、显性、可溯源”。无论是研发底层大模型的科技巨头，还是在手机端一键生成视频的普通创作者，只要动用了AI技术进行内容生成或合成，就必须在明面上打好标签，在暗处植入底层代码级别的隐性水印。</span></span></p><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;这么多年的经验告诉我，这绝对不是一份只停留在指导层面的温和文件。</span></span><span leaf="" data-pm-slice="1 1 [&quot;para&quot;,{&quot;tagName&quot;:&quot;p&quot;,&quot;attributes&quot;:{&quot;data-pm-slice&quot;:&quot;0 0 []&quot;},&quot;namespaceURI&quot;:&quot;http://www.w3.org/1999/xhtml&quot;}]"><span textstyle="" style="font-size: 18px;">很显然，在鼓励技术狂飙的同时，监管正在强行拉起一道“虚实隔离”的安全网。</span></span><span leaf=""><span textstyle="" style="font-size: 18px;">数字经济的治理逻辑向来是“抓大放小”的。监管部门不可能去挨个审查全网数以亿计的短视频，他们采取的策略是直接拿捏住平台这个“守门人”。而平台为了迅速自保、撇清自身的连带责任，必然会启动一种极度严苛的责任传导机制。通过修改用户协议、升级机器审核，平台会把合规压力无缝甚至加码转嫁给每一个终端发布者。这种商业判断极其现实：既然你用了AI享受了流量和效率的红利，那么由此衍生的审核风险和侵权隐患，就得由你自己扛着。</span></span></p><section style="text-align: center;" nodeleaf=""><img data-src="https://mmbiz.qpic.cn/sz_mmbiz_png/suLsmosVRdUSnfF9veYLibZ3zN9HjRKGFMZJcTHoNPgwydhP1GJ9sPiczEp6aYicCF3QXlnJOjo03ViaCV90ibupeaQ96WO148btdBmVVBuDWYHg/640?wx_fmt=png" class="rich_pages wxw-img" data-ratio="1" data-s="300,640" data-w="1024" type="block" data-imgfileid="100000058" data-aiimageid="41637163086708737" data-aiimagesource="1" data-aistatus="2" src="./assets/17823675857800.10888038593092497.png"></section><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 这种“向下施压”的传导效应，在目前的几个内容主阵地已经极其明显。赶紧去翻看了一下各大APP的创作者后台，抖音的动作最为激进。强制勾选只是表面，貌似底层算法每天都在全网巡查，一旦抓到未加标签的“漏网之鱼”，轻则限流降权，重则直接拔线封号，没有任何商量余地。小红书的神经则紧绷在其核心资产“真实种草”上，对未标识的AI美图或虚假测评规则是说可能直接采取降权甚至仅个人可见的“隐身”处理。再看B站和微信生态，更是“人机结合”，把判断权下放给了社区，引入了大众共治和笔记机制。逢AI必标，已经从一句行业倡议，变成了关乎账号生死的铁律。</span></span></p><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;撕开平台规则的表层，底层的法律暗礁更需要注意。最容易引爆的雷区在于侵权责任的无限连带。试想，如果克隆了某个真实人物的声音或面部特征去博取流量，一旦引发争议，因为没有提前挂出“AI虚构”的免死金牌，“事主”面临的将是避无可避的索赔。而更隐蔽的致命伤，在于版权确权的“自证陷阱”。在这个游戏规则里，不打标签涉嫌违规欺诈；可一旦老老实实打满AI生成的标签，在现行著作权法的凝视下，其实就等于在向全世界广而告之：这部作品缺乏足够的人类独创性。呵呵，你资格琢磨吧:)</span></span></p><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 这种自上而下的透明化运动，对处于商业变现顶端的大型品牌方和广告主来说，会带来巨大的冲击。广告的底层逻辑是造梦和构建信任，而“由AI生成”这几个字，就是击碎梦境的现实铁锤。当快消巨头砸重金做出的极致抗皱面霜宣传片，被迫在公屏上打出“画面由AI合成”时，消费者对产品功效的信任瞬间就会归零。在《广告法》的严苛标尺下，试图用AI去掩盖产品瑕疵、夸大美妆上脸效果，或是模拟虚假的汽车极限越野场景，已经彻底跨越了平台违规的界限。现在很多服务都是外包的，你合同条款写得再严格，责任推得再干净，最后“临时工”找不到了，还得回来找你。要抓你“虚假宣传”或者“商业欺诈”，一抓一个准！</span></span></p><section style="text-align: center;" nodeleaf=""><img data-src="https://mmbiz.qpic.cn/mmbiz_png/suLsmosVRdWDBO6m3Qq1jd8sI30AMzP3HSFh6uwRuDicjKaWAtdA4nyibCOOV5LYb3VdM0Ogv2wiawFd8qvBmlC1AwQOh08OO9eIR8iaibI23NWc/640?wx_fmt=png" class="rich_pages wxw-img" data-ratio="1" data-s="300,640" data-w="1024" type="block" data-imgfileid="100000059" data-aiimageid="41637163083513856" data-aiimagesource="1" data-aistatus="2" src="./assets/17823675864850.5630724780931294.png"></section><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 生意难做啦，抱怨没有任何意义，大平台借助机器执行这些政策，你想去擦边也越来越难。对于机构和品牌方来说，更是不值得去冒这一类的风险。每个玩家当下急需考虑的是如何重构商业内容的创作模式，比如说物理隔离、重新划定人机协作的楚河汉界。机器做机器该做的事儿，人做人该做的事儿。就像老罗跨年时说的，浮在AI之上。</span><span textstyle="" style="font-size: 18px;font-weight: bold;">数字AI的局限性，总归你得靠物理AI来给你补。</span></span><span leaf="" data-pm-slice="1 1 [&quot;para&quot;,{&quot;tagName&quot;:&quot;p&quot;,&quot;attributes&quot;:{},&quot;namespaceURI&quot;:&quot;http://www.w3.org/1999/xhtml&quot;}]"><span textstyle="" style="font-size: 18px;font-weight: bold;">看不懂这句话的，或者对具体怎么做有兴趣的，欢迎私信来切磋切磋了。</span></span></p><p style="margin-bottom: 24px;"><span leaf=""><span textstyle="" style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 往后看，AIGC内容的强制标识会演变成数字时代的“食品配料表”。以后这个治理手段会下沉变成一个数字内容产业的基础设施。对于机构和品牌方来说，不能用传统的合规手段来应对了，你也需要与时俱进，学习能力和演进能力是你留在牌桌上继续博弈的唯一筹码。也许你看到的更多是负担风险，换一个角度，我看到的可是满满的商机。别一天到晚抱怨生意难做吃不饱了，</span><span textstyle="" style="font-size: 18px;font-weight: bold;">网信办都帮你把饭端上来了，还得喂你吃吗？</span></span></p><section style="margin-bottom: 24px;"><span leaf=""><br></span></section><p style="display: none;"><mp-style-type data-value="3"></mp-style-type></p></div>
+          
+        </div>
+                        
+                
+        
+        
+         <div id="font_pannel_area"></div>
+        
+        
+
+        
+        <div id="js_temp_bottom_area" class="rich_media_tool_area">
+          
+<div class="rich_media_tool__wrp">
+    <div class="rich_media_tool">
+    
+                <div class="rich_media_info weui-flex policy_tips tips_global_primary claim_source_block">
+                <div class="media_tool_meta tips_global_primary meta_primary">内容含AI生成图片</div>
+              </div>
+              <div class="rich_media_info weui-flex rich_media_bottom">
+      
+            
+            
+          </div>
+  </div>
+  </div>
+
+        </div>
+
+
+                
+              </div>
+    </div>
+
+    <div class="rich_media_area_primary sougou" id="sg_tj" style="display:none"></div>
+
+    
+    <div class="rich_media_area_extra">
+      <div class="rich_media_area_extra_inner">
+        
+        <div id="page_bottom_area"></div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+
+</div>
+<div id="js_article_bottom_bar" class="bottom_bar_wrp js_temp_bottom_bar">
+      <div id="article_bottom_bar_area"></div>
+    </div>
+
+<!-- 评论数据 -->
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "domain": "cross-border-ma",
+  "articles": [
+    {
+      "slug": "china-outbound-investment-europeans",
+      "title": "China Patches Its Outbound Investment Management Regime: What Europeans Shall Know",
+      "excerpt": "The implementation of the State Council's landmark Regulations on Outbound Investment marks a historic transition. For the first time, China's outbound capital oversight has been elevated from a fragmented web of departmental rules to a unified, statutory administrative law.",
+      "date": "June 3, 2026",
+      "author": "Sofos | & Partners PRC",
+      "image": "/articles/en/china-outbound-investment-europeans/assets/blog-3.png",
+      "tags": [
+        "Outbound Investment",
+        "ODI",
+        "Cross-Border M&A",
+        "CRS 2.0"
+      ],
+      "folder": "china-outbound-investment-europeans",
+      "category": "cross-border-ma"
+    },
+    {
+      "slug": "cross-border-paperwork-trap",
+      "title": "When the Signature Won't Travel: A Guide to China's Cross-Border Paperwork Trap",
+      "excerpt": "If you are an in-house counsel managing a Foreign-Invested Enterprise (FIE) in China, you've probably hit this wall: You have a perfectly executed DocuSign envelope from your offshore CEO — legally binding, flawless audit trail — and China rejects it.",
+      "date": "June 22, 2026",
+      "author": "Sofos | & Partners PRC",
+      "image": "/articles/en/cross-border-paperwork-trap/assets/blog-4.png",
+      "tags": [
+        "Cross-Border",
+        "Document Authentication",
+        "FIE",
+        "Compliance"
+      ],
+      "folder": "cross-border-paperwork-trap",
+      "category": "cross-border-ma"
+    }
+  ]
+}
